@@ -1,6 +1,5 @@
 import { ContainerModule, interfaces } from 'inversify';
 import { UserController } from './user/user-controller';
-import { EventController } from './event/event-controller';
 import { HttpErrorHandler } from './common/http-error-handlers';
 
 export default new ContainerModule(
@@ -11,7 +10,6 @@ export default new ContainerModule(
     rebind: interfaces.Rebind,
   ) => {
     bind(UserController).toSelf();
-    bind(EventController).toSelf();
     bind(HttpErrorHandler).toSelf();
   },
 );

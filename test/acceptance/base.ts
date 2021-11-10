@@ -14,10 +14,6 @@ import {
   UserRepositoryType,
 } from '../../src/core/component/user/port/user-repository';
 import {
-  EventRepository,
-  EventRepositoryType,
-} from '../../src/core/component/event/port/event-repository';
-import {
   NotificationService,
   NotificationServiceType,
 } from '../../src/core/port/notification/notification-service';
@@ -57,11 +53,6 @@ export class AcceptanceSetupManager {
     container
       .rebind<UserRepository>(UserRepositoryType)
       .toConstantValue(instance(mocks.postgres.user.userRepositoryMock));
-
-    // Event
-    container
-      .rebind<EventRepository>(EventRepositoryType)
-      .toConstantValue(instance(mocks.postgres.event.eventRepositoryMock));
   }
 
   private mockFCM(container: Container): void {
